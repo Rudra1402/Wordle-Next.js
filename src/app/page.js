@@ -81,17 +81,17 @@ export default function YourComponent() {
   }
 
   const showResultDialog = (
-    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 w-1/2 bg-gray-200 text-gray-700 rounded-md flex items-center justify-center z-20'>
+    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-1/2 w-5/6 md:w-3/4 xl:w-1/2 bg-gray-200 text-gray-700 rounded-md flex items-center justify-center z-20'>
       <div
         className='text-5xl cursor-pointer leading-none rotate-45 absolute top-1 right-1 text-red-500'
         onClick={() => setShowResult(false)}
       >+</div>
       {isGameCompleted
-        ? <div className='text-2xl leading-none'>Congratulations! You guessed it correct!</div>
+        ? <div className='text-xl md:text-2xl leading-none'>Congratulations! You guessed it correct!</div>
         : null
       }
       {isWordCompleted.w5 && !isGameCompleted
-        ? <div className='text-2xl leading-none'>OOPS! The correct word is {word}!</div>
+        ? <div className='text-xl md:text-2xl leading-none'>OOPS! The correct word is {word}!</div>
         : null
       }
     </div>
@@ -166,6 +166,9 @@ export default function YourComponent() {
             break;
           }
         }
+        if (containerArr[4].textContent !== '') {
+          containerArr[4].textContent = '';
+        }
       }
     } else if (!isWordCompleted.w2) {
       containerArr = Array.from(document.getElementsByClassName('container2'));
@@ -176,6 +179,9 @@ export default function YourComponent() {
             containerArr[i - 1].textContent = '';
             break;
           }
+        }
+        if (containerArr[4].textContent !== '') {
+          containerArr[4].textContent = '';
         }
       }
     } else if (!isWordCompleted.w3) {
@@ -188,6 +194,9 @@ export default function YourComponent() {
             break;
           }
         }
+        if (containerArr[4].textContent !== '') {
+          containerArr[4].textContent = '';
+        }
       }
     } else if (!isWordCompleted.w4) {
       containerArr = Array.from(document.getElementsByClassName('container4'));
@@ -199,6 +208,9 @@ export default function YourComponent() {
             break;
           }
         }
+        if (containerArr[4].textContent !== '') {
+          containerArr[4].textContent = '';
+        }
       }
     } else if (!isWordCompleted.w5) {
       containerArr = Array.from(document.getElementsByClassName('container5'));
@@ -209,6 +221,9 @@ export default function YourComponent() {
             containerArr[i - 1].textContent = '';
             break;
           }
+        }
+        if (containerArr[4].textContent !== '') {
+          containerArr[4].textContent = '';
         }
       }
     }
@@ -319,7 +334,7 @@ export default function YourComponent() {
 
   const PopulateKeyboard = () => {
     return (
-      <div className='flex flex-col gap-1.5 mt-4 items-center text-base scale-90 sm:scale-100 select-none'>
+      <div className='flex flex-col gap-1.5 mt-4 items-center text-base scale-95 sm:scale-100 select-none'>
         <div className='flex gap-1.5 items-center'>
           <div
             className='h-9 w-6 border border-gray-400 rounded-sm cursor-pointer flex items-center justify-center bg-gray-600 text-white'
