@@ -334,7 +334,7 @@ export default function YourComponent() {
 
   const PopulateKeyboard = () => {
     return (
-      <div className='flex flex-col gap-1.5 mt-4 items-center text-base scale-95 sm:scale-100 select-none'>
+      <div className='flex flex-col gap-1.5 mt-4 items-center text-base scale-100 select-none'>
         <div className='flex gap-1.5 items-center'>
           <div
             className='h-9 w-6 border border-gray-400 rounded-sm cursor-pointer flex items-center justify-center bg-gray-600 text-white'
